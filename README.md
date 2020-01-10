@@ -1,6 +1,6 @@
-#Operating system course project
+<h1>Operating system course project</h1>
 
-##Task
+<h2>Task</h2>
 
 Develop a set of producer-consumer programmes implementing the following scheme of synchronous inter-process communication:
 * Process 1: reads the data from the standard input stream and transfers it unchanged to process 2 through the K1 communication mechanism.
@@ -25,13 +25,13 @@ Additional information:
 For evaluation 5 (bdb) - sending signals to processes should be done using an additional program written in C language. 
 This program should allow (using the user menu) to select the signal and the process to which the signal is to be sent.
 
-##View
-###Project app
+<h2>View</h2>
+<h3>Project app</h3>
 ![project_app](./image/project_app.png)
-###Client app
+<h3>lient app</h3>
 ![clinet app](./image/client_app.png)
 
-##Compilation
+<h2>Compilation</h2>
 * With gcc
     * Compile project application
 >Inside app folder:
@@ -51,7 +51,7 @@ This program should allow (using the user menu) to select the signal and the pro
           cmake .. <br>
           make so_client
     
-##Launch program  with mode
+<h2>Launch program  with mode</h2>
 * -i - interactive mode
 * -u - /dev/urandom read mode
 * -f [filepath] - specific file reading mode
@@ -62,12 +62,12 @@ This program should allow (using the user menu) to select the signal and the pro
 >Example client application
 >>./client 
 
-##Communication between processes
+<h2>Communication between processes</h2>
 
 * Between P1 and P2 - shared memory and synchronized with 2 semaphore
 * Betwenn P2 and P3 - fifo
 
-##Signal used
+<h2>Signal used</h2>
 
 * SIGINT - for stop communication between 3 processes
 * SIGTSTP - for suspending communication

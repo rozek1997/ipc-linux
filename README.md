@@ -27,40 +27,52 @@ This program should allow (using the user menu) to select the signal and the pro
 
 <h2>View</h2>
 <h3>Project app</h3>
-![project_app](./image/project_app.png)
-<h3>lient app</h3>
-![clinet app](./image/client_app.png)
+![project_app](image/project_app.png)
+<h3>Client app</h3>
+![client app](image/client_app.png)
 
 <h2>Compilation</h2>
 * With gcc
     * Compile project application
->Inside app folder:
->>gcc -o main *.c
+    <pre>
+        Inside app folder:
+        gcc -o main *.c
+    </pre>
 
    * Compile client application
->Inside client folder
->>gcc -o client client.c
+   <pre>
+    Inside client folder
+    gcc -o client client.c
+    </pre>
 
 * with cmake
     * Compile project application
-        > mkdir build && cd build <br>
-          cmake .. <br>
+    <pre>
+          mkdir build && cd build
+          cmake .. 
           make so_app
+    </pre>
     * Compile project application
-        > mkdir build && cd build <br>
-          cmake .. <br>
+    <pre>
+        > mkdir build && cd build 
+          cmake .. 
           make so_client
+    </pre>
     
 <h2>Launch program  with mode</h2>
 * -i - interactive mode
 * -u - /dev/urandom read mode
 * -f [filepath] - specific file reading mode
 
->Example project application
+Example project application
+<pre>
 >>./main -f /dev/urandom
+</pre>
 
->Example client application
->>./client 
+Example client application
+<pre>
+./client 
+</pre>
 
 <h2>Communication between processes</h2>
 

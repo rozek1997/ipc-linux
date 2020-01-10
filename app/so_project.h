@@ -29,7 +29,8 @@ int shmId;
 int semId;
 char * shm;
 const int MAX_MESSAGE_SIZE;
-
+FILE* pidsFileDescriptor;
+char* pidsFileName;
 
 pid_t process1PID, process2PID, process3PID;
 

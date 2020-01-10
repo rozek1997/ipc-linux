@@ -13,6 +13,8 @@ int iterator = 0;
 int shmId = 0;
 int semId = 0;
 const int MAX_MESSAGE_SIZE = 15 + 1;
+FILE* pidsFileDescriptor = NULL;
+char * pidsFileName = "/tmp/myPIDs";
 
 
 void inputParamsCheck(int argc, char **argv) {
@@ -53,6 +55,20 @@ void inputParamsCheck(int argc, char **argv) {
 void init() {
     semInit();
     shmCreate();
+}
+
+void savePIDToFile(){
+
+    pidsFileDescriptor = fopen(pidsFileName, "wt");
+    if(pidsFileDescriptor == NULL){
+        fprintf(stderr, "ID procesów nie zostały zapisane do pliku");
+    }
+
+    fprintf(pidsFileDescriptor, "Process%d\n", process1PID);
+    fprintf(pidsFileDescriptor, "Process%d\n", process2PID);
+    fprintf(pidsFileDescriptor, "Process%d", process3PID);
+
+    fclose(pidsFileDescriptor);
 }
 
 int main(int argc, char **argv) {
@@ -108,6 +124,7 @@ int main(int argc, char **argv) {
     }
 
     signalReconfig(&mask_set, &act);
+    savePIDToFile();
 
     while (1) {
         pause();

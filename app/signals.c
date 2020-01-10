@@ -54,6 +54,7 @@ void sigHandlerParent(int signal) {
         unlink(myFIFO);
         shmRemove();
         semctl(semId, 0, IPC_RMID);
+        remove(pidsFileName);
         kill(getpid(), SIGKILL);
     }
 

@@ -27,13 +27,16 @@ This program should allow (using the user menu) to select the signal and the pro
 
 <h2>View</h2>
 <h3>Project app</h3>
+
 ![project_app](image/project_app.png)
+
 <h3>Client app</h3>
+
 ![client app](image/client_app.png)
 
 <h2>Compilation</h2>
-* With gcc
-    * Compile project application
+*   With gcc
+    *   compile project application
     <pre>
         Inside app folder:
         gcc -o main *.c
@@ -60,10 +63,11 @@ This program should allow (using the user menu) to select the signal and the pro
     </pre>
     
 <h2>Launch program  with mode</h2>
-* -i - interactive mode
-* -u - /dev/urandom read mode
-* -f [filepath] - specific file reading mode
-
+<ul>
+    <li>-i - interactive mode</li>
+    <li> -u - /dev/urandom read mode</li>
+    <li> -f [filepath] - specific file reading mode</li>
+</ul> 
 Example project application
 <pre>
 >>./main -f /dev/urandom
